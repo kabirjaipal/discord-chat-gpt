@@ -1,0 +1,38 @@
+{
+  "name": "discord-chat-gpt",
+  "version": "1.0.1",
+  "description": "Chat-GPT Chat Bot For Discord",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "discord",
+    "discord.js",
+    "chatbot",
+    "framework",
+    "bot",
+    "discord-chatbot",
+    "chat-gpt",
+    "openai",
+    "chatgpt",
+    "friend",
+    "nodejs",
+    "api",
+    "codebox",
+    "discord-chat",
+    "djs-chatbot",
+    "ai"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kabirsingh2004/discord-chat-gpt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kabirsingh2004/discord-chat-gpt/issues"
+  },
+  "homepage": "https://github.com/kabirsingh2004/discord-chat-gpt",
+  "author": "KabirSingh2004",
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^3.1.0"
+  }
+}

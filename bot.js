@@ -1,24 +1,3 @@
-# Real-Giveaway
-
-Advance discord ChatGPT Chat Bot System with Support Slash/Message support
-
-# Download
-
-```cli
-npm i discord-chat-gpt
------- or ---------------------
-yarn add discord-chat-gpt
-```
-
-# Example
-
-**_<p style="text-align: center;">[![Example](https://media.discordapp.net/attachments/1007230019371802654/1066354977704001596/Screenshot_2023-01-21_192330.png)](https://discord.gg/PcUVWApWN3)</p>_**
-
-# Setting up
-
-### Client values
-
-```js
 import { Client, GatewayIntentBits } from "discord.js";
 import { ChatGPT } from "discord-chat-gpt";
 
@@ -42,11 +21,7 @@ const chatGpt = new ChatGPT({
 client.on("ready", () => {
   console.log(`> ${client.user.username} is Online !!`);
 });
-```
 
-### Discord Chat Bot Example
-
-```js
 client.on("messageCreate", async (message) => {
   if (!message.guild || message.author.bot) return;
   let ChatBotChannelId = "ChannelID";
@@ -66,8 +41,5 @@ client.on("messageCreate", async (message) => {
     });
   }
 });
-```
 
-### Bugs, glitches and issues
-
-If you encounter any problems feel free to open an issue in our <a href="https://github.com/kabirsingh2004/discord-chat-gpt/issues">GitHub repository</a> or join the [Discord server](https://discord.gg/PcUVWApWN3).
+client.login("BOT_TOKEN");
