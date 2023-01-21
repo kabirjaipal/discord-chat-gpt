@@ -1,4 +1,4 @@
-# Real-Giveaway
+# Discord Chat GPT
 
 Advance discord ChatGPT Chat Bot System with Support Slash/Message support
 
