@@ -8,33 +8,33 @@ class ChatGPT {
   constructor(options) {
     this.orgKey = options.authId;
     this.apiKey = options.apiKey;
-  }
-
-  async chat(content, requester) {
-    const configuration = new Configuration({
+    this.configuration = new Configuration({
       organization: this.orgKey,
       apiKey: this.apiKey,
     });
-    const openai = new OpenAIApi(configuration);
-    let response = await openai
-      .createCompletion({
+    this.openai = new OpenAIApi(this.configuration);
+  }
+
+  async chat(content, requester) {
+    if (!content || !requester) {
+      throw new Error("Content and requester cannot be null or undefined");
+    }
+
+    try {
+      let response = await this.openai.createCompletion({
         model: "davinci",
         prompt: `ChatGPT is a friendly chatbot. \n\
-        ChatGPT : Hello, how are you?\n\
-        ${requester}: ${content}\n\
-        ChatGPT:`,
+          ChatGPT : Hello, how are you?\n\
+          ${requester}: ${content}\n\
+          ChatGPT:`,
         temperature: 0.9,
         max_tokens: 100,
         stop: ["ChatGPT:", "Kabir Jaipal:"],
-      })
-      .then((res) => {
-        return res.data.choices.at(0).text;
-      })
-      .catch((e) => {
-        return e.message;
       });
-
-    return response;
+      return response.data.choices.at(0).text;
+    } catch (error) {
+      throw new Error(`Failed to complete API call: ${error.message}`);
+    }
   }
 }
 
